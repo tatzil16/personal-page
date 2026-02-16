@@ -30,5 +30,13 @@
     "tech": ["Python", "Pandas", "scikit-learn", "TextBlob", "Seaborn"],
     "githubUrl": "https://github.com/tatzil16/movie-review-data-analysis",
     "featured": false
+  },
+  {
+    "id": "5",
+    "title": "Huge VQA Dataset Tool",
+    "description": "Tool for generating large-scale visual question-answering datasets by leveraging GPT-4V to automatically produce question-answer pairs from images, eliminating the need for crowdsourcing.",
+    "tech": ["Python", "OpenAI API", "GPT-4V"],
+    "githubUrl": "https://github.com/bonjiminium/huge-vqa",
+    "featured": false
   }
 ]

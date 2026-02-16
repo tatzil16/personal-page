@@ -15,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Software Engineer",
+  title: "Tomer Atzili | AI Engineer",
   description:
-    "Personal portfolio and blog — software engineering, projects, and more.",
+    "Personal portfolio — AI engineering, projects, and more.",
 };
 
 export default function RootLayout({
