@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tomer Atzili | AI Engineer",
+  title: "Tomer | AI Engineer",
   description:
     "Personal portfolio — AI engineering, projects, and more.",
 };
