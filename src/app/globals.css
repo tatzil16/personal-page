@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #09090b;
+  --surface: #18181b;
+  --accent: #a78bfa;
+  --accent-hover: #c4b5fd;
+  --secondary: #6b7280;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: #27272a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-secondary: var(--secondary);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Selection */
+::selection {
+  background: rgba(167, 139, 250, 0.3);
+  color: var(--foreground);
+}
+
+/* Highlight.js code blocks */
+pre code.hljs {
+  background: var(--surface) !important;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Aurora animations */
+@keyframes aurora1 {
+  0%, 100% { transform: translateX(0) skewX(-2deg); }
+  50% { transform: translateX(5%) skewX(2deg); }
+}
+
+@keyframes aurora2 {
+  0%, 100% { transform: translateX(0) skewX(2deg) scaleY(1); }
+  33% { transform: translateX(-4%) skewX(-1deg) scaleY(1.1); }
+  66% { transform: translateX(3%) skewX(1deg) scaleY(0.95); }
+}
+
+@keyframes aurora3 {
+  0%, 100% { transform: translateX(0) skewX(-1deg); }
+  40% { transform: translateX(6%) skewX(2deg); }
+  70% { transform: translateX(-3%) skewX(-2deg); }
+}

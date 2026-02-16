@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "RLInsight",
+    "description": "Automated Rocket League match analysis bot that polls the Ballchasing API for new replays, uses GPT to compare player stats against historical win/loss patterns, and delivers AI coaching feedback directly to Discord.",
+    "tech": ["Python", "OpenAI API", "Ballchasing API", "SQLite", "Discord.py", "asyncio"],
+    "githubUrl": "https://github.com/tatzil16/rlinsight",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "NDIA Hackathon Dashboard",
+    "description": "Interactive Streamlit dashboard built for an NDIA hackathon that visualizes pilot training performance trends, displaying average grades across event categories and syllabi as an interactive heatmap.",
+    "tech": ["Python", "Streamlit", "Pandas", "Plotly"],
+    "githubUrl": "https://github.com/tatzil16/ndia-hackathon",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Fake News Classifier",
+    "description": "Deep learning project that fine-tunes a BERT model combined with LSTM layers to classify news articles as real or fake, achieving 96% accuracy through contextual embeddings and text preprocessing.",
+    "tech": ["Python", "PyTorch", "Hugging Face Transformers", "BERT", "scikit-learn"],
+    "githubUrl": "https://github.com/tatzil16/fake-news-classifier",
+    "featured": true
+  },
+  {
+    "id": "4",
+    "title": "Movie Review Data Analysis",
+    "description": "Exploratory data analysis and machine learning project that investigates factors driving movie success, using sentiment analysis on reviews and a Random Forest classifier to predict whether a film will be a hit or a flop.",
+    "tech": ["Python", "Pandas", "scikit-learn", "TextBlob", "Seaborn"],
+    "githubUrl": "https://github.com/tatzil16/movie-review-data-analysis",
+    "featured": false
+  }
+]
