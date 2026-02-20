@@ -15,7 +15,7 @@ export interface Bio {
   tagline: string;
   about: string;
   avatar?: string;
-  email: string;
+  email?: string;
   socials: Social[];
   techStack: TechItem[];
 }

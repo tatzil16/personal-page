@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { getBio, saveBio } from "@/lib/data";
 
@@ -16,6 +17,8 @@ export async function PUT(req: NextRequest) {
 
   const body = await req.json();
   await saveBio(body);
+  revalidatePath("/contact");
+  revalidatePath("/");
 
   return NextResponse.json(body);
 }

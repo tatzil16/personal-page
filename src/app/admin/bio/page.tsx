@@ -8,6 +8,7 @@ export default function AdminBioPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/api/admin/bio")
@@ -21,12 +22,18 @@ export default function AdminBioPage() {
   async function handleSave() {
     if (!bio) return;
     setSaving(true);
-    await fetch("/api/admin/bio", {
+    setSaveError(null);
+    const res = await fetch("/api/admin/bio", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bio),
     });
     setSaving(false);
+    if (!res.ok) {
+      const { error } = await res.json().catch(() => ({ error: "Unknown error" }));
+      setSaveError(error ?? "Failed to save");
+      return;
+    }
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   }
@@ -48,6 +55,12 @@ export default function AdminBioPage() {
           {saving ? "Saving..." : saved ? "Saved!" : "Save"}
         </button>
       </div>
+
+      {saveError && (
+        <p className="mb-4 rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-400">
+          {saveError}
+        </p>
+      )}
 
       <div className="flex max-w-lg flex-col gap-4">
         <div>
@@ -79,16 +92,6 @@ export default function AdminBioPage() {
             rows={4}
             value={bio.about}
             onChange={(e) => setBio({ ...bio, about: e.target.value })}
-          />
-        </div>
-        <div>
-          <label className="mb-1 block text-xs font-medium text-muted">
-            Email
-          </label>
-          <input
-            className={inputClass}
-            value={bio.email}
-            onChange={(e) => setBio({ ...bio, email: e.target.value })}
           />
         </div>
       </div>

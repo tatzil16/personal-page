@@ -1,6 +1,5 @@
 import { getBio } from "@/lib/data";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { HiOutlineMail } from "react-icons/hi";
 import PageTransition from "@/components/layout/PageTransition";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -24,16 +23,8 @@ export default async function ContactPage() {
         </h1>
         <p className="mb-10 max-w-md text-muted">
           I&apos;m always open to new opportunities and interesting
-          conversations. Feel free to reach out.
+          conversations. Feel free to reach out on LinkedIn.
         </p>
-
-        <a
-          href={`mailto:${bio.email}`}
-          className="mb-12 inline-flex items-center gap-2 rounded-md border border-accent px-6 py-3 font-mono text-sm text-accent transition-colors hover:bg-accent/10"
-        >
-          <HiOutlineMail size={18} />
-          {bio.email}
-        </a>
 
         <div className="flex items-center gap-6">
           {bio.socials.map((social) => (
